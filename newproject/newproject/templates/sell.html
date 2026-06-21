@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sell Product - Dairy Delights</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:wght@400;500&display=swap');
+:root{--deep:#3B1F0A;--rich:#6B3A1F;--mid:#9B6240;--warm:#C4956A;--cream:#FDF8F2;--soft:#F7F0E4;--line:#E8D5B7;--gold:#C49A3C;--gold2:#E8C97A;--red:#b12704;--green:#267a3e}*{box-sizing:border-box;margin:0;padding:0}body{font-family:Lora,serif;background:var(--cream);color:var(--deep)}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}.nav{height:68px;padding:0 32px;background:var(--cream);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;position:sticky;top:0;z-index:5}.logo{display:flex;align-items:center;gap:10px;min-width:190px}.logo i{width:38px;height:38px;border-radius:50%;background:var(--rich);color:#fff;display:grid;place-items:center}.logo b{font-family:'Playfair Display',serif;font-size:18px}.logo span{display:block;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)}.navlinks{margin-left:auto;display:flex;gap:8px}.act{height:38px;padding:0 12px;border:1px solid transparent;background:transparent;color:var(--rich);border-radius:5px;display:inline-flex;align-items:center;gap:7px;font-size:12px}.act:hover{background:var(--soft);border-color:var(--line)}.strip{background:var(--deep);color:var(--line);border-bottom:3px solid var(--gold);padding:9px 24px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:12px}.strip i{color:var(--gold2);margin-right:6px}.hero{background:linear-gradient(90deg,var(--deep),var(--rich));color:white;padding:46px 32px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;opacity:.3;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cg fill='none' stroke='%23C4956A' stroke-width='.8'%3E%3Cellipse cx='45' cy='32' rx='13' ry='23' transform='rotate(-16 45 32)'/%3E%3Cellipse cx='45' cy='32' rx='7' ry='14' transform='rotate(-16 45 32)'/%3E%3C/g%3E%3C/svg%3E")}.hero>*{position:relative;max-width:1180px;margin-left:auto;margin-right:auto}.tag{display:inline-block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);border:1px solid var(--gold);padding:5px 12px;margin-bottom:14px}.hero h1{font-family:'Playfair Display',serif;font-size:38px;line-height:1.15}.hero em{color:var(--gold2)}.hero p{max-width:680px;color:var(--line);font-size:14px;line-height:1.8;margin-top:10px}.wrap{max-width:1280px;margin:auto;padding:28px 32px 52px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:22px}.panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}.title{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:6px}.hint{font-size:12px;color:var(--mid);line-height:1.7;margin-bottom:18px}.section{border-top:1px solid var(--line);padding-top:18px;margin-top:18px}.section:first-of-type{border-top:0;padding-top:0;margin-top:0}.section h2{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{margin-bottom:14px}.field.full{grid-column:1/-1}.field label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mid);margin-bottom:6px}.input,.select,.area{width:100%;border:1.5px solid var(--line);border-radius:5px;background:var(--cream);color:var(--deep);min-height:40px;padding:9px 11px;outline:0}.area{min-height:105px;resize:vertical;line-height:1.55}.input:focus,.select:focus,.area:focus{border-color:var(--warm)}.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}.check{font-size:13px;color:var(--rich);display:flex;gap:8px;align-items:center}.check input{accent-color:var(--rich)}.upload{border:1.5px dashed var(--warm);background:var(--soft);border-radius:8px;min-height:160px;display:grid;place-items:center;text-align:center;color:var(--mid);padding:18px}.upload i{font-size:32px;color:var(--gold);margin-bottom:8px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{min-height:42px;border-radius:5px;border:1.5px solid transparent;padding:0 18px;cursor:pointer;font-size:13px;letter-spacing:.04em}.primary{background:var(--deep);color:white;border-color:var(--deep)}.gold{background:var(--gold);color:var(--deep);border-color:var(--gold)}.outline{background:transparent;color:var(--rich);border-color:var(--rich)}.side{position:sticky;top:92px;height:max-content}.previewCard{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:16px;margin-top:14px}.pic{height:180px;background:var(--cream);border:1px solid var(--line);border-radius:8px;display:grid;place-items:center;margin-bottom:12px}.bottle{width:86px;height:120px;border:2px solid var(--warm);border-radius:12px 12px 18px 18px;background:linear-gradient(160deg,#fff 58%,var(--line));box-shadow:4px 4px 0 var(--warm);display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;position:relative}.bottle:before{content:"";position:absolute;top:18px;left:0;right:0;height:7px;background:var(--line);border-radius:50%}.label{background:var(--deep);color:#fff;font-family:'Playfair Display',serif;font-size:9px;padding:4px 8px;border-radius:2px}.price{color:var(--red);font-size:24px;font-weight:700}.small{font-size:12px;color:var(--mid);line-height:1.7}.list{display:grid;gap:10px;margin-top:12px}.item{display:flex;gap:10px;font-size:12px;color:var(--rich);line-height:1.55}.item i{color:var(--gold);width:18px;margin-top:2px}.notice{background:var(--deep);color:var(--line);border-radius:8px;padding:16px;margin-top:16px}.notice h3{font-family:'Playfair Display',serif;color:var(--gold2);font-size:16px;margin-bottom:8px}.notice p{font-size:12px;line-height:1.7}.footer{background:var(--deep);border-top:3px solid var(--gold);color:var(--line);padding:28px 32px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;font-size:12px;opacity:.8}.toast{position:fixed;right:20px;bottom:20px;background:var(--deep);color:white;border-left:4px solid var(--gold);border-radius:6px;padding:12px 16px;font-size:13px;box-shadow:0 10px 30px #0005;transform:translateY(120px);opacity:0;transition:.25s;z-index:20}.toast.show{transform:translateY(0);opacity:1}@media(max-width:950px){.wrap{grid-template-columns:1fr}.side{position:static}.grid{grid-template-columns:1fr}}@media(max-width:680px){.nav{height:auto;flex-wrap:wrap;padding:12px}.navlinks{margin-left:0;width:100%;justify-content:space-between}.hero{padding:34px 18px}.hero h1{font-size:30px}.wrap{padding:18px}.checks{grid-template-columns:1fr}.foot{flex-direction:column}}
+
+/* ── MODAL ── */
+.dd-modal-overlay{position:fixed;inset:0;background:rgba(59,31,10,.55);backdrop-filter:blur(3px);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.dd-modal-overlay.active{opacity:1;pointer-events:all}
+.dd-modal{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:36px 32px;width:100%;max-width:420px;position:relative;box-shadow:0 20px 60px rgba(59,31,10,.25)}
+.dd-modal-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--mid);line-height:1}
+.dd-modal-close:hover{color:var(--deep)}
+.dd-modal-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--deep);margin-bottom:4px}
+.dd-modal-sub{font-size:13px;color:var(--mid);margin-bottom:22px;line-height:1.6}
+.dd-modal-field{margin-bottom:14px}
+.dd-modal-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mid);margin-bottom:5px}
+.dd-modal-input{width:100%;border:1.5px solid var(--line);border-radius:5px;background:#fff;color:var(--deep);padding:9px 11px;outline:0;font-family:Lora,serif;font-size:13px}
+.dd-modal-input:focus{border-color:var(--warm)}
+.dd-modal-submit{width:100%;min-height:42px;background:var(--deep);color:#fff;border:none;border-radius:5px;font-family:'Playfair Display',serif;font-size:15px;cursor:pointer;margin-top:6px;letter-spacing:.03em}
+.dd-modal-submit:hover{background:var(--rich)}
+.dd-modal-toggle{text-align:center;font-size:12px;color:var(--mid);margin-top:16px}
+.dd-modal-toggle a{color:var(--rich);cursor:pointer;font-weight:600}
+.dd-modal-toggle a:hover{text-decoration:underline}
+.btn-outline-nav{padding:7px 16px;border:1.5px solid var(--rich);background:transparent;color:var(--rich);font-family:Lora,serif;font-size:12px;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:.04em}
+.btn-outline-nav:hover{background:var(--rich);color:var(--cream)}
+.btn-solid-nav{padding:7px 16px;border:1.5px solid var(--deep);background:var(--deep);color:var(--cream);font-family:Lora,serif;font-size:12px;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:.04em}
+.btn-solid-nav:hover{background:var(--rich);border-color:var(--rich)}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="logo" href="{% url 'home' %}"><i class="fas fa-bottle-droplet"></i><div><b>Dairy Delights</b><span>Kashmir's Own</span></div></a><div class="navlinks"><a class="act" href="{% url 'products' %}"><i class="fas fa-store"></i>Products</a><a class="act" href="{% url 'products' %}"><i class="fas fa-eye"></i>Product Page</a><a class="act" href="{% url 'home' %}"><i class="fas fa-house"></i>Home</a></div>
+{% if user.is_authenticated %}
+<button class="btn-solid-nav" onclick="location.href='{% url 'seller:logouti' %}'">Log Out</button>
+{% else %}
+<div style="display:flex;gap:8px;margin-left:12px"><button class="btn-outline-nav" onclick="openSellerModal('login')">Log In</button><button class="btn-solid-nav" onclick="openSellerModal('signup')">Sign Up</button></div>
+{% endif %}
+</nav>
+<div class="strip"><span><i class="fas fa-pen-to-square"></i>Add product details</span><span><i class="fas fa-tags"></i>Set price and offers</span><span><i class="fas fa-truck"></i>Define delivery</span><span><i class="fas fa-robot"></i>Add GenAI product context</span></div>
+<header class="hero"><span class="tag">Seller product form</span><h1>Add a Product to <em>Sell Online</em></h1><p>Use this seller form to add product information that can appear on the product listing and product detail pages.</p></header>
+<main class="wrap"><form class="panel" action="{% url 'seller:data' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="section"><h1 class="title">Basic Product Details</h1><p class="hint">Add the main product details customers will see on the product detail page.</p><div class="grid"><div class="field"><label>Product Name</label><input class="input" name="name" placeholder="Farm Fresh Cow Milk"></div><div class="field"><label>Brand</label><input class="input" name="brand" placeholder="Dairy Delights"></div><div class="field"><label>Category</label><select class="select" name="category"><option>Fresh Milk</option><option>Pure Ghee</option><option>Paneer & Cheese</option><option>Curd & Yogurt</option><option>Butter & Cream</option><option>Family Combo</option></select></div><div class="field"><label>SKU / Product Code</label><input class="input" name="sku" placeholder="DD-MILK-500ML"></div><div class="field full"><label>Short Description</label><textarea class="area" name="short_description" placeholder="500 ml glass bottle, pasteurized, chilled, delivered every morning."></textarea></div><div class="field full"><label>Full Product Description</label><textarea class="area" name="description" placeholder="Write complete product story, sourcing, quality, taste, use cases, and customer benefits."></textarea></div></div></div>
+<div class="section"><h2>Images and Media</h2><div class="grid"><div class="field full"><label>Main Product Image</label><div class="upload"><div><i class="fas fa-cloud-arrow-up"></i><p>Upload product image here<br><span class="small">Add clear product photos for the gallery</span></p><input type="file" name="main_image" style="margin-top:12px"></div></div></div><div class="field"><label>Gallery Image 1</label><input class="input" type="file" name="gallery_1"></div><div class="field"><label>Gallery Image 2</label><input class="input" type="file" name="gallery_2"></div><div class="field"><label>Gallery Image 3</label><input class="input" type="file" name="gallery_3"></div><div class="field"><label>Video URL</label><input class="input" name="video_url" placeholder="Optional product video link"></div></div></div>
+<div class="section"><h2>Pricing, Stock, and Offers</h2><div class="grid"><div class="field"><label>Selling Price</label><input class="input" name="price" type="number" placeholder="45"></div><div class="field"><label>M.R.P.</label><input class="input" name="mrp" type="number" placeholder="52"></div><div class="field"><label>Stock Quantity</label><input class="input" name="stock" type="number" placeholder="100"></div><div class="field"><label>Stock Status</label><select class="select" name="stock_status"><option>In stock</option><option>Only few left</option><option>Out of stock</option><option>Pre-order</option></select></div><div class="field"><label>Offer Badge</label><input class="input" name="badge" placeholder="Best seller / Fresh today"></div><div class="field"><label>Tax / GST Info</label><input class="input" name="tax_info" placeholder="Inclusive of all taxes"></div></div></div>
+<div class="section"><h2>Product Specifications</h2><div class="grid"><div class="field"><label>Quantity / Size</label><input class="input" name="size" placeholder="500 ml"></div><div class="field"><label>Product Type</label><input class="input" name="type" placeholder="Cow Milk"></div><div class="field"><label>Ingredients</label><input class="input" name="ingredients" placeholder="100% cow milk"></div><div class="field"><label>Shelf Life</label><input class="input" name="shelf_life" placeholder="2 days refrigerated"></div><div class="field"><label>Packaging</label><input class="input" name="packaging" placeholder="Reusable glass bottle"></div><div class="field"><label>Allergen Info</label><input class="input" name="allergen" placeholder="Contains milk"></div><div class="field full"><label>Product Highlights</label><textarea class="area" name="highlights" placeholder="Write 4-6 highlights, one per line. Example: No preservatives, farm sourced, morning delivery."></textarea></div></div></div>
+<div class="section"><h2>Delivery and Business Options</h2><div class="grid"><div class="field"><label>Delivery Area</label><input class="input" name="delivery_area" placeholder="Srinagar and nearby areas"></div><div class="field"><label>Delivery Slot</label><input class="input" name="delivery_slot" placeholder="Morning 6 AM - 9 AM"></div><div class="field"><label>Return / Replacement Policy</label><input class="input" name="return_policy" placeholder="Replacement for leakage or freshness issue"></div><div class="field"><label>Minimum Business Order</label><input class="input" name="business_minimum" placeholder="10 bottles / 5 kg / custom"></div></div></div></div>
+<div class="actions"><button class="btn primary" type="submit">Save Product</button><button class="btn gold" type="button" onclick="showToast('Preview data ready for product.html')">Preview Product Page</button><button class="btn outline" type="reset">Clear Form</button></div></form>
+<aside class="side"><div class="panel"><h2 class="title">Product Page Preview</h2><p class="hint">This card previews how the product can appear on the listing and detail pages.</p><div class="previewCard"><div class="pic"><div class="bottle"><div class="label">Product</div></div></div><h3 style="font-family:'Playfair Display',serif;margin-bottom:6px">Farm Fresh Cow Milk</h3><p class="small">500 ml glass bottle, pasteurized, chilled, delivered every morning.</p><div style="margin:10px 0"><span class="price">Rs. 45</span> <span class="small">M.R.P. Rs. 52</span></div><button class="btn gold" style="width:100%" onclick="showToast('Added to cart preview')">Add to Cart</button></div><div class="list"><div class="item"><i class="fas fa-database"></i><span>Keep product details complete and consistent.</span></div><div class="item"><i class="fas fa-image"></i><span>Use clear main and gallery images.</span></div><div class="item"><i class="fas fa-link"></i><span>After saving, open the product detail page to review it.</span></div><div class="item"><i class="fas fa-robot"></i><span>Use AI context to answer product questions clearly.</span></div></div></div><div class="notice"><h3>Useful Product Fields</h3><p>name, brand, category, sku, price, mrp, stock, badge, description, ingredients, shelf life, packaging, delivery area, business minimum, AI notes, main image.</p></div></aside></main>
+<footer class="footer"><div class="foot"><span>Dairy Delights seller template</span><span>Use this form to manage product details, images, and selling options.</span></div></footer>
+<div id="toast" class="toast">Saved</div>
+
+<!-- SELLER AUTH MODAL -->
+<form id="sellerAuthForm" method="post">
+  {% csrf_token %}
+  <div class="dd-modal-overlay" id="sellerModalOverlay" onclick="handleSellerOverlayClick(event)">
+    <div class="dd-modal" id="sellerModalBox">
+      <button class="dd-modal-close" onclick="closeSellerModal()" type="button" aria-label="Close">×</button>
+      <div class="dd-modal-title" id="sellerModalTitle">Welcome Back</div>
+      <div class="dd-modal-sub" id="sellerModalSub">Sign in to your Dairy Delights seller account</div>
+      <div id="sellerModalFields">
+        <div class="dd-modal-field signup-field" style="display:none">
+          <label class="dd-modal-label">Seller / Business Name</label>
+          <input class="dd-modal-input signup-input" name="seller_name" type="text" placeholder="Your name or business name">
+        </div>
+        <div class="dd-modal-field">
+          <label class="dd-modal-label">Email</label>
+          <input class="dd-modal-input" name="email" type="email" placeholder="your@email.com" required>
+        </div>
+        <div class="dd-modal-field signup-field" style="display:none">
+          <label class="dd-modal-label">Phone Number</label>
+          <input class="dd-modal-input signup-input" name="phone" type="text" placeholder="Business contact number">
+        </div>
+        <div class="dd-modal-field signup-field" style="display:none">
+          <label class="dd-modal-label">Business / Farm Location</label>
+          <input class="dd-modal-input signup-input" name="location" type="text" placeholder="e.g. Srinagar, J&amp;K">
+        </div>
+        <div class="dd-modal-field signup-field" style="display:none">
+          <label class="dd-modal-label">GST / Business Registration No.</label>
+          <input class="dd-modal-input signup-input" name="gst_number" type="text" placeholder="Optional — for business sellers">
+        </div>
+        <div class="dd-modal-field">
+          <label class="dd-modal-label">Password</label>
+          <input class="dd-modal-input" name="password" type="password" placeholder="Password" required>
+        </div>
+      </div>
+      <button class="dd-modal-submit" id="sellerModalSubmit" type="submit">Log In</button>
+</form>
+      <div class="dd-modal-toggle" id="sellerModalToggle">
+        Don't have a seller account? <a onclick="openSellerModal('signup')">Sign up free</a>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function showToast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
+
+  function openSellerModal(mode) {
+    var overlay = document.getElementById('sellerModalOverlay');
+    var authForm = document.getElementById('sellerAuthForm');
+    var title = document.getElementById('sellerModalTitle');
+    var sub = document.getElementById('sellerModalSub');
+    var submit = document.getElementById('sellerModalSubmit');
+    var toggle = document.getElementById('sellerModalToggle');
+
+    overlay.classList.add('active');
+    var signupFields = document.querySelectorAll('.signup-field');
+    var signupInputs = document.querySelectorAll('.signup-input');
+
+    if (mode === 'signup') {
+      authForm.action = "{% url 'seller:signin' %}";
+      signupFields.forEach(function(f){ f.style.display = 'block'; });
+      signupInputs.forEach(function(i){ i.required = true; });
+      title.textContent = 'Become a Seller';
+      sub.textContent = 'Create your seller account and start listing your dairy products';
+      submit.textContent = 'Create Seller Account';
+      toggle.innerHTML = 'Already have an account? <a onclick="openSellerModal(\'login\')">Log in</a>';
+    } else {
+      authForm.action = "{% url 'seller:loginn' %}";
+      signupFields.forEach(function(f){ f.style.display = 'none'; });
+      signupInputs.forEach(function(i){ i.required = false; });
+      title.textContent = 'Welcome Back';
+      sub.textContent = 'Sign in to your Dairy Delights seller account';
+      submit.textContent = 'Log In';
+      toggle.innerHTML = 'Don\'t have a seller account? <a onclick="openSellerModal(\'signup\')">Sign up free</a>';
+    }
+  }
+
+  function closeSellerModal() {
+    document.getElementById('sellerModalOverlay').classList.remove('active');
+  }
+
+  function handleSellerOverlayClick(e) {
+    if (e.target === document.getElementById('sellerModalOverlay')) closeSellerModal();
+  }
+</script>
+</body>
+</html>

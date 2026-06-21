@@ -1,0 +1,1095 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dairy Delights</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --brown-deep: #3B1F0A;
+    --brown-rich: #6B3A1F;
+    --brown-mid: #9B6240;
+    --brown-warm: #C4956A;
+    --cream-dark: #E8D5B7;
+    --cream-light: #F7F0E4;
+    --cream-white: #FDF8F2;
+    --gold: #C49A3C;
+    --gold-light: #E8C97A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .dd-page {
+    font-family: 'Lora', serif;
+    background: var(--cream-white);
+    color: var(--brown-deep);
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* ── KASHMIRI SVG PATTERN ── */
+  .paisley-bg {
+    background-color: var(--brown-deep);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%236B3A1F' stroke-width='1'%3E%3Cellipse cx='40' cy='30' rx='12' ry='20' transform='rotate(-20 40 30)'/%3E%3Cellipse cx='40' cy='30' rx='7' ry='14' transform='rotate(-20 40 30)'/%3E%3Ccircle cx='40' cy='60' r='3'/%3E%3Cpath d='M20 10 Q30 5 25 20' stroke-width='0.5'/%3E%3Cpath d='M60 10 Q50 5 55 20' stroke-width='0.5'/%3E%3Cpath d='M10 50 Q5 40 20 45' stroke-width='0.5'/%3E%3Cpath d='M70 50 Q75 40 60 45' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* ── NAVBAR ── */
+  .dd-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 64px;
+    background: var(--cream-white);
+    border-bottom: 1px solid var(--cream-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .dd-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .dd-logo-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--brown-rich);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .dd-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--brown-deep);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .dd-logo-sub {
+    font-family: 'Lora', serif;
+    font-size: 9px;
+    color: var(--brown-mid);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .dd-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+  }
+
+  .dd-nav-links a {
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    color: var(--brown-rich);
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.03em;
+  }
+
+  .dd-nav-links a:hover { background: var(--cream-light); color: var(--brown-deep); }
+
+  .dd-nav-btns {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .btn-outline {
+    padding: 7px 16px;
+    border: 1.5px solid var(--brown-rich);
+    background: transparent;
+    color: var(--brown-rich);
+    font-family: 'Lora', serif;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+  }
+
+  .btn-outline:hover { background: var(--brown-rich); color: var(--cream-white); }
+
+  .btn-solid {
+    padding: 7px 16px;
+    border: 1.5px solid var(--brown-deep);
+    background: var(--brown-deep);
+    color: var(--cream-white);
+    font-family: 'Lora', serif;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+  }
+
+  .btn-solid:hover { background: var(--brown-rich); border-color: var(--brown-rich); }
+
+  /* ── HERO ── */
+  .dd-hero {
+    min-height: 480px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .dd-hero-left {
+    background: var(--brown-deep);
+    padding: 4rem 3rem 4rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dd-hero-left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%236B3A1F' stroke-width='0.8' opacity='0.6'%3E%3Cellipse cx='50' cy='35' rx='15' ry='25' transform='rotate(-15 50 35)'/%3E%3Cellipse cx='50' cy='35' rx='8' ry='16' transform='rotate(-15 50 35)'/%3E%3Ccircle cx='50' cy='35' r='3'/%3E%3Cpath d='M20 15 Q35 8 30 28' stroke-width='0.4'/%3E%3Cpath d='M80 15 Q65 8 70 28' stroke-width='0.4'/%3E%3Cpath d='M15 65 Q8 50 28 55' stroke-width='0.4'/%3E%3Cpath d='M85 65 Q92 50 72 55' stroke-width='0.4'/%3E%3Ccircle cx='25' cy='80' r='2'/%3E%3Ccircle cx='75' cy='80' r='2'/%3E%3Ccircle cx='50' cy='90' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .dd-hero-tag {
+    display: inline-block;
+    font-family: 'Lora', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    border: 1px solid var(--gold);
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+
+  .dd-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--cream-white);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .dd-hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .dd-hero-desc {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    color: var(--cream-dark);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 340px;
+  }
+
+  .dd-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--brown-deep);
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.04em;
+    width: fit-content;
+  }
+
+  .dd-hero-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .dd-hero-right {
+    background: var(--cream-light);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+  }
+
+  .dd-hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23C4956A' stroke-width='0.5' opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3Ccircle cx='30' cy='30' r='7'/%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Cline x1='30' y1='8' x2='30' y2='18'/%3E%3Cline x1='30' y1='42' x2='30' y2='52'/%3E%3Cline x1='8' y1='30' x2='18' y2='30'/%3E%3Cline x1='42' y1='30' x2='52' y2='30'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .dd-hero-illustration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 1;
+  }
+
+  .dd-milk-jar {
+    width: 120px;
+    height: 160px;
+    background: linear-gradient(160deg, #FDF8F2 60%, #E8D5B7);
+    border: 2px solid var(--brown-warm);
+    border-radius: 12px 12px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 16px;
+    position: relative;
+    box-shadow: 4px 4px 0 var(--brown-warm);
+  }
+
+  .dd-milk-label {
+    background: var(--brown-deep);
+    color: var(--cream-white);
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+  }
+
+  .dd-milk-wave {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--cream-dark);
+    border-radius: 50%;
+  }
+
+  .dd-milk-wave.animate {
+    animation: milkFilling 4s ease-in-out infinite;
+  }
+
+  @keyframes milkFilling {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .dd-hero-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1;
+  }
+
+  .dd-badge {
+    background: var(--cream-white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 6px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--brown-rich);
+    font-family: 'Lora', serif;
+  }
+
+  .dd-badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── DIVIDER ── */
+  .dd-divider {
+    height: 32px;
+    background: var(--brown-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .dd-divider-pattern {
+    font-size: 13px;
+    color: var(--brown-mid);
+    letter-spacing: 1.5em;
+    white-space: nowrap;
+  }
+
+  /* ── WHY CHOOSE US ── */
+  .dd-why {
+    background: var(--cream-white);
+    padding: 3.5rem 2.5rem;
+  }
+
+  .dd-section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .dd-section-eyebrow {
+    font-family: 'Lora', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brown-mid);
+    margin-bottom: 0.5rem;
+  }
+
+  .dd-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--brown-deep);
+    line-height: 1.25;
+  }
+
+  .dd-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .dd-why-card {
+    background: var(--cream-light);
+    border: 1px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .dd-why-card:hover { border-color: var(--brown-warm); transform: translateY(-3px); }
+
+  .dd-why-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--brown-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 22px;
+  }
+
+  .dd-why-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--brown-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .dd-why-text {
+    font-size: 13px;
+    color: var(--brown-mid);
+    line-height: 1.7;
+  }
+
+  /* ── SUBSCRIPTION BANNER ── */
+  .dd-sub-banner {
+    background: var(--brown-deep);
+    padding: 3rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dd-sub-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%236B3A1F' stroke-width='1' opacity='0.5'%3E%3Cellipse cx='60' cy='40' rx='18' ry='30' transform='rotate(-10 60 40)'/%3E%3Cellipse cx='60' cy='40' rx='10' ry='18' transform='rotate(-10 60 40)'/%3E%3Ccircle cx='60' cy='40' r='4'/%3E%3Cpath d='M25 15 Q40 8 36 30' stroke-width='0.6'/%3E%3Cpath d='M95 15 Q80 8 84 30' stroke-width='0.6'/%3E%3Ccircle cx='30' cy='95' r='3'/%3E%3Ccircle cx='90' cy='95' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .dd-sub-text { position: relative; z-index: 1; }
+
+  .dd-sub-tag {
+    display: inline-block;
+    font-family: 'Lora', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    border: 1px solid var(--gold);
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .dd-sub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--cream-white);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .dd-sub-title em { font-style: italic; color: var(--gold-light); }
+
+  .dd-sub-desc {
+    font-size: 13px;
+    color: var(--cream-dark);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .dd-sub-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dd-sub-feat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--cream-dark);
+    font-family: 'Lora', serif;
+  }
+
+  .dd-feat-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .dd-testimonials {
+    background: var(--cream-light);
+    padding: 3.5rem 2.5rem;
+  }
+
+  .dd-testi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .dd-testi-card {
+    background: var(--cream-white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--brown-warm);
+  }
+
+  .dd-testi-text {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--brown-rich);
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+  }
+
+  .dd-testi-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dd-testi-avatar {
+    width: 32px;
+    height: 32px;
+    background: var(--brown-rich);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    color: var(--cream-white);
+    font-weight: 600;
+  }
+
+  .dd-testi-name {
+    font-family: 'Lora', serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--brown-deep);
+  }
+
+  .dd-testi-loc {
+    font-size: 11px;
+    color: var(--brown-mid);
+  }
+
+  .dd-stars {
+    color: var(--gold);
+    font-size: 11px;
+    margin-left: auto;
+  }
+
+  /* ── FOOTER ── */
+  .dd-footer {
+    background: var(--brown-deep);
+    padding: 2.5rem 2.5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dd-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--brown-warm) 50%, var(--gold) 100%);
+  }
+
+  .dd-footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .dd-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .dd-footer-brand-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .dd-footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--cream-white);
+  }
+
+  .dd-footer-desc {
+    font-size: 12px;
+    color: var(--cream-dark);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .dd-footer-social {
+    display: flex;
+    gap: 8px;
+  }
+
+  .dd-social-btn {
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream-dark);
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 14px;
+  }
+
+  .dd-social-btn:hover { background: var(--gold); color: var(--brown-deep); }
+
+  .dd-footer-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+
+  .dd-footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .dd-footer-links a {
+    text-decoration: none;
+    font-size: 12px;
+    color: var(--cream-dark);
+    opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s;
+    font-family: 'Lora', serif;
+  }
+
+  .dd-footer-links a:hover { opacity: 1; color: var(--gold-light); }
+
+  .dd-footer-contact li {
+    font-size: 12px;
+    color: var(--cream-dark);
+    opacity: 0.75;
+    font-family: 'Lora', serif;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dd-footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dd-footer-copy {
+    font-size: 11px;
+    color: var(--cream-dark);
+    opacity: 0.5;
+    font-family: 'Lora', serif;
+  }
+
+  .dd-footer-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  /* ── MODAL ── */
+  .dd-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dd-modal-overlay.active { display: flex; }
+
+  .dd-modal {
+    background: var(--cream-white);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 360px;
+    max-width: 90vw;
+    position: relative;
+    border-top: 4px solid var(--brown-rich);
+  }
+
+  .dd-modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--brown-deep);
+    margin-bottom: 0.25rem;
+  }
+
+  .dd-modal-sub {
+    font-size: 12px;
+    color: var(--brown-mid);
+    margin-bottom: 1.5rem;
+    font-family: 'Lora', serif;
+  }
+
+  .dd-modal-field {
+    margin-bottom: 0.875rem;
+  }
+
+  .dd-modal-label {
+    font-size: 11px;
+    font-family: 'Lora', serif;
+    color: var(--brown-mid);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .dd-modal-input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid var(--cream-dark);
+    border-radius: 5px;
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    color: var(--brown-deep);
+    background: var(--cream-white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .dd-modal-input:focus { border-color: var(--brown-warm); }
+
+  .dd-modal-submit {
+    width: 100%;
+    padding: 11px;
+    background: var(--brown-deep);
+    color: var(--cream-white);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+    letter-spacing: 0.04em;
+  }
+
+  .dd-modal-submit:hover { background: var(--brown-rich); }
+
+  .dd-modal-toggle {
+    text-align: center;
+    margin-top: 0.75rem;
+    font-size: 12px;
+    color: var(--brown-mid);
+    font-family: 'Lora', serif;
+  }
+
+  .dd-modal-toggle a {
+    color: var(--brown-rich);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .dd-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--brown-mid);
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px;
+  }
+</style>
+
+<body>
+
+<div class="dd-page">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Dairy Delights - Kashmiri heritage dairy brand homepage</h2>
+
+  <!-- NAVBAR -->
+  <nav class="dd-nav" role="navigation">
+    <div class="dd-logo">
+      <div class="dd-logo-icon">🥛</div>
+      <div>
+        <div class="dd-logo-text">Dairy Delights</div>
+        <div class="dd-logo-sub">Kashmir's Own</div>
+      </div>
+    </div>
+    <ul class="dd-nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="{% url 'products' %}">Products</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="dd-nav-btns">
+      {% if user.is_authenticated %}
+        <button class="btn-solid" onclick="location.href='{% url 'customers:logouti' %}'">Log Out</button>
+      {% else %} 
+        <button class="btn-outline" onclick="openModal('login')">Log In</button>
+        <button class="btn-solid" onclick="openModal('signup')">Sign Up</button>
+      {% endif %}
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="dd-hero">
+    <div class="dd-hero-left">
+      <div class="dd-hero-tag">✦ Heritage Since 1982 ✦</div>
+      <h1 class="dd-hero-title">Pure Dairy,<br><em>Pure Tradition</em></h1>
+      <p class="dd-hero-desc">Inspired by the warmth of Kashmiri homes - our milk, ghee, and paneer carry the soul of the valley, delivered fresh to your doorstep every morning.</p>
+      <button class="dd-hero-cta" onclick="window.location.href='{% url 'products' %}'">
+        Let's Buy &nbsp;&rarr;
+      </button>
+    </div>
+    <div class="dd-hero-right">
+      <div class="dd-hero-illustration">
+        <div class="dd-milk-jar">
+          <div class="dd-milk-wave"></div>
+          <div class="dd-milk-label">Farm Fresh</div>
+        </div>
+      </div>
+      <div class="dd-hero-badges" style="margin-left: 1.5rem; justify-content: center;">
+        <div class="dd-badge"><div class="dd-badge-dot"></div>Same-day delivery</div>
+        <div class="dd-badge"><div class="dd-badge-dot"></div>No preservatives</div>
+        <div class="dd-badge"><div class="dd-badge-dot"></div>Farm-to-table</div>
+        <div class="dd-badge"><div class="dd-badge-dot"></div>Flexible subscriptions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="dd-divider">
+    <div class="dd-divider-pattern">&#10063; &#10063; &#10063; &#10063; &#10063; &#10063; &#10063; &#10063; &#10063; &#10063; &#10063; &#10063; &#10063;</div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <section class="dd-why">
+    <div class="dd-section-header">
+      <div class="dd-section-eyebrow">Why choose us</div>
+      <div class="dd-section-title">Rooted in Heritage,<br>Crafted with Care</div>
+    </div>
+    <div class="dd-why-grid">
+      <div class="dd-why-card">
+        <div class="dd-why-icon">🌿</div>
+        <div class="dd-why-title">100% Natural</div>
+        <div class="dd-why-text">No additives, no preservatives. Just pure dairy the way nature and tradition intended it to be.</div>
+      </div>
+      <div class="dd-why-card">
+        <div class="dd-why-icon">🚚</div>
+        <div class="dd-why-title">Morning Delivery</div>
+        <div class="dd-why-text">Fresh milk at your door before sunrise - because mornings should start with the best.</div>
+      </div>
+      <div class="dd-why-card">
+        <div class="dd-why-icon">🏔️</div>
+        <div class="dd-why-title">Kashmiri Heritage</div>
+        <div class="dd-why-text">Our dairy traditions trace back generations - a legacy of craftsmanship from the valley.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIPTION BANNER -->
+  <section class="dd-sub-banner">
+    <div class="dd-sub-text">
+      <div class="dd-sub-tag">✦ Subscribe & Save</div>
+      <h2 class="dd-sub-title">Never Run Out of<br><em>Goodness</em> Again</h2>
+      <p class="dd-sub-desc">Join hundreds of families who wake up to fresh dairy every morning - without lifting a finger. Our subscription plans are flexible, affordable, and always fresh.</p>
+      <button class="dd-hero-cta" onclick="openModal('signup')">Subscribe Now &nbsp;&rarr;</button>
+    </div>
+    <div class="dd-sub-features">
+      <div class="dd-sub-feat"><div class="dd-feat-icon">📅</div>Pause or cancel anytime - no lock-ins</div>
+      <div class="dd-sub-feat"><div class="dd-feat-icon">💰</div>Up to 15% off vs one-time orders</div>
+      <div class="dd-sub-feat"><div class="dd-feat-icon">🎁</div>Free Kashmiri kahwa on first month</div>
+      <div class="dd-sub-feat"><div class="dd-feat-icon">♻️</div>Eco-friendly reusable glass bottles</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="dd-testimonials">
+    <div class="dd-section-header">
+      <div class="dd-section-eyebrow">What families say</div>
+      <div class="dd-section-title">Trusted by Homes<br>Across the Valley</div>
+    </div>
+    <div class="dd-testi-grid">
+      <div class="dd-testi-card">
+        <div class="dd-testi-text">"The ghee reminds me of my grandmother's kitchen in Srinagar. Nothing else comes close - the aroma, the taste, everything is authentic."</div>
+        <div class="dd-testi-author">
+          <div class="dd-testi-avatar">FS</div>
+          <div>
+            <div class="dd-testi-name">Fatima Shah</div>
+            <div class="dd-testi-loc">Subscriber since 2023</div>
+          </div>
+          <div class="dd-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="dd-testi-card">
+        <div class="dd-testi-text">"I switched from supermarket milk and the difference is night and day. My children actually finish their milk now. Highly recommend!"</div>
+        <div class="dd-testi-author">
+          <div class="dd-testi-avatar">RB</div>
+          <div>
+            <div class="dd-testi-name">Rajan Bhat</div>
+            <div class="dd-testi-loc">Subscriber since 2024</div>
+          </div>
+          <div class="dd-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dd-footer">
+    <div class="dd-footer-grid">
+      <div>
+        <div class="dd-footer-brand">
+          <div class="dd-footer-brand-icon">🥛</div>
+          <div class="dd-footer-brand-name">Dairy Delights</div>
+        </div>
+        <p class="dd-footer-desc">Bringing the warmth of Kashmiri dairy traditions to your table - fresh, honest, and with care in every drop.</p>
+        <div class="dd-footer-social">
+          <button class="dd-social-btn" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></button>
+          <button class="dd-social-btn" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></button>
+          <button class="dd-social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      <div>
+        <div class="dd-footer-heading">Quick Links</div>
+        <ul class="dd-footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="{% url 'products' %}">Products</a></li>
+          <li><a href="#">Subscription Plans</a></li>
+          <li><a href="{% url 'sell' %}">Sell with Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="dd-footer-heading">Contact</div>
+        <ul class="dd-footer-contact">
+          <li><i class="fas fa-envelope" style="font-size:13px" aria-hidden="true"></i> info@dairydelights.com</li>
+          <li><i class="fas fa-phone" style="font-size:13px" aria-hidden="true"></i> +91-XXXXXXXXXX</li>
+          <li><i class="fas fa-map-pin" style="font-size:13px" aria-hidden="true"></i> Srinagar, J&K, India</li>
+          <li><i class="fas fa-clock" style="font-size:13px" aria-hidden="true"></i> Mon-Sat, 6am - 8pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dd-footer-bottom">
+      <div class="dd-footer-copy">&copy; 2026 Dairy Delights. All rights reserved.</div>
+      <div class="dd-footer-tagline">Pure Dairy, Pure Tradition ✦</div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- MODAL -->
+ <form id="authform" method="post">
+    {% csrf_token %}
+<div class="dd-modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="dd-modal" id="modalBox">
+    <button class="dd-modal-close" onclick="closeModal()" aria-label="Close">×</button>
+    <div class="dd-modal-title" id="modalTitle">Welcome Back</div>
+    <div class="dd-modal-sub" id="modalSub">Sign in to your Dairy Delights account</div>
+    <div id="modalFields">
+      <div class="dd-modal-field signup-field" style="display:none">
+        <label class="dd-modal-label">Name</label>
+        <input class="dd-modal-input signup-input" name="name" type="text" placeholder="your name">
+      </div>
+      <div class="dd-modal-field">
+        <label class="dd-modal-label">Email</label>
+        <input class="dd-modal-input" name="email" type="email" placeholder="your@email.com" required>
+      </div>
+      <div class="dd-modal-field signup-field" style="display:none">
+        <label class="dd-modal-label">Phone</label>
+        <input class="dd-modal-input signup-input" name="phone" type="text" placeholder="phone number">
+      </div>
+      <div class="dd-modal-field signup-field" style="display:none">
+        <label class="dd-modal-label">Address</label>
+        <input class="dd-modal-input signup-input" name="address" type="text" placeholder="delivery address">
+      </div>
+      <div class="dd-modal-field">
+        <label class="dd-modal-label">Password</label>
+        <input class="dd-modal-input" name="password" type="password" placeholder="password" required>
+      </div>
+    </div>
+    <button class="dd-modal-submit" id="modalSubmit">Log In</button>
+</form>
+    <div class="dd-modal-toggle" id="modalToggle">
+      Don't have an account? <a onclick="openModal('signup')">Sign up free</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal(mode) {
+    var overlay = document.getElementById('modalOverlay');
+    var authForm = document.getElementById('authform');
+    var title = document.getElementById('modalTitle');
+    var sub = document.getElementById('modalSub');
+    var submit = document.getElementById('modalSubmit');
+    var toggle = document.getElementById('modalToggle');
+    
+    overlay.classList.add('active');
+    var signupFields = document.querySelectorAll('.signup-field');
+    var signupInputs = document.querySelectorAll('.signup-input');
+    if (mode === 'signup') {
+      authForm.action = "{% url 'customers:signin' %}";
+      signupFields.forEach(function(field) { field.style.display = 'block'; });
+      signupInputs.forEach(function(input) { input.required = true; });
+      title.textContent = 'Join Dairy Delights';
+      sub.textContent = 'Create your account and start enjoying fresh dairy';
+      submit.textContent = 'Create Account';
+      toggle.innerHTML = 'Already have an account? <a onclick="openModal(\'login\')">Log in</a>';
+    }
+    else {
+      authForm.action = "{% url 'customers:loginn' %}";
+      signupFields.forEach(function(field) { field.style.display = 'none'; });
+      signupInputs.forEach(function(input) { input.required = false; });
+      title.textContent = 'Welcome Back';
+      sub.textContent = 'Sign in to your Dairy Delights account';
+      submit.textContent = 'Log In';
+      toggle.innerHTML = 'Don\'t have an account? <a onclick="openModal(\'signup\')">Sign up free</a>';
+     }
+  }
+  
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('active');
+  }
+  
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  }
+
+  // Scroll trigger for milk animation
+  const milkWave = document.querySelector('.dd-milk-wave');
+  const milkJar = document.querySelector('.dd-milk-jar');
+  let animationStarted = false;
+
+  window.addEventListener('scroll', function() {
+    if (!animationStarted && milkJar) {
+      const rect = milkJar.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        milkWave.classList.add('animate');
+        animationStarted = true;
+      }
+    }
+  });
+
+</script>
+</body>
+</html>
+
+
