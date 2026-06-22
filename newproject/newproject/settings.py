@@ -32,7 +32,7 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS =[os.environ.get(
     'ALLOWED_HOSTS',
     'localhost,127.0.0.1,testserver'
-).split(','),"dairy-delights.onrender.com"]
+).split(','),"https://dairy-delights-kvd7.onrender.com"]
 
 
 # Application definition
